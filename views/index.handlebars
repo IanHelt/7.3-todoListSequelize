@@ -1,0 +1,24 @@
+<h1>Todo List</h1>
+<hr/>
+<form class="todoForm" action="/todoAdd" method="post">
+  <input type="text" name="titleInput" value="" placeholder="Add a todo.."/>
+  <input type="text" name="detailsInput" value="" placeholder="Add a description.."/>
+  <button type="submit" name="btnAdd">Add Todo</button>
+</form>
+<hr/>
+<div class="todoContainer">
+  <ul class="todoList">
+    {{#each todos}}
+    <li>
+       <h3>{{title}}</h3>
+       <p>{{details}}</p>
+        <form style="display:inline;" action="/edit/{{id}}" method="post">
+          <button type="submit" name="editButton" value="{{title}}">Edit</button>
+        </form>
+        <form style="display:inline;" action="/todoDelete/{{id}}" method="post">
+          <button type="submit" name="btnDelete" value="{{title}}">Complete</button>
+        </form>
+    </li>
+    {{/each}}
+  </ul>
+</div>

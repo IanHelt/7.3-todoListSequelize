@@ -1,0 +1,7 @@
+<h1>Edit Todo</h1>
+
+<form action="/todoEdit/{{todo.id}}" method="post">
+  <input type="text" name="titleEdit" value="{{todo.title}}"/>
+  <input type="text" name="detailsEdit" value="{{todo.details}}"/>
+  <button type="submit" name="submitEdit">Confirm</button>
+</form>
